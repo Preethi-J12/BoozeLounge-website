@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BoozeLounge | Sign In</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Playfair+Display:wght@600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --coffe-dark: #3e2723;
+      --coffe-medium: #6F4E37;
+      --coffe-light: #C4A484;
+      --coffe-accent: #D2B48C;
+      --coffee-gold: #D4AF37;
+      --text-light: #f3f3f3;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #0B0705 0%, #161515 90%);
+      color: var(--text-light);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .login-container {
+      background: rgba(62, 39, 35, 0.95);
+      padding: 50px 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
+      width: 400px;
+      text-align: center;
+      position: relative;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .login-container::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      border: 2px solid rgba(212, 175, 55, 0.3);
+      pointer-events: none;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--coffee-gold);
+      margin-bottom: 25px;
+    }
+
+    .logo i {
+      color: var(--coffee-gold);
+      font-size: 30px;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      color: var(--coffee-gold);
+      margin-bottom: 30px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      font-size: 15px;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    input:focus {
+      background: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: var(--coffee-gold);
+      color: #000;
+      font-weight: 700;
+      font-size: 16px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background: #b9932f;
+      transform: translateY(-2px);
+    }
+
+    .back-link {
+      display: block;
+      margin-top: 20px;
+      text-decoration: none;
+      color: var(--coffe-accent);
+      font-size: 14px;
+      transition: color 0.3s ease;
+    }
+
+    .back-link:hover {
+      color: var(--coffee-gold);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="logo">
+      <i class="fa-solid fa-wine-glass"></i>
+      Booze<span style="color:white;">Lounge</span>
+    </div>
+    <h2>Welcome Back!</h2>
+    <input type="text" id="email" placeholder="Enter email or phone">
+    <input type="password" id="password" placeholder="Enter password">
+    <button onclick="login()">Sign In</button>
+    <a href="bar.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+  </div>
+
+  <script>
+    function login() {
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      if (email && password) {
+        localStorage.setItem('isLoggedIn', 'true');
+        alert('Login successful!');
+        window.location.href = 'bar.html';
+      } else {
+        alert('Please enter both email and password.');
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bar Shop Website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- lets link google font for inserting font families -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
+  
+  <!-- link to css file -->
+   <link rel="stylesheet" href="bar.css">
+</head>
+<body>
+
+  <script>
+  // Check if user is logged in
+  const isLoggedIn = localStorage.getItem('isLoggedIn');
+
+  if (!isLoggedIn) {
+    // If not logged in, redirect to login page
+    window.location.href = 'login.html';
+  }
+</script>
+
+
+
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <a href="#" class="logo">
+           <!-- now insert bar cup icon here -->
+           <i class="fa-solid fa-wine-glass logo-icon"></i>
+        <div class="logo-text">Booze<span>Lounge</span></div>
+      </a>
+
+      <nav>
+        <ul>
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#products" class="nav-link">Products</a></li>
+          <li><a href="#offers" class="nav-link">Offers</a></li>
+          <li><a href="#container" class="nav-link">Contact us</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-buttons">
+  <a href="login.html" id="signInBtn" class="btn btn-secondary">Sign In</a>
+  <a href="#" id="signOutBtn" class="btn btn-primary" style="display:none;">Sign Out</a>
+</div>
+
+    </div>
+
+    
+  </header>
+
+  <!-- Hero section -->
+   <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-subtitle">
+          <i class="fas fa-wine-bottle"></i>
+          Pouring Passion Daily
+        </div>
+        <h1 class="hero-title">The Drinking Den<br><span>Mix. Mingle. Repeat.</span></h1>
+        <p class="hero-text">Where flavors come alive in every glass,
+Stories are shared and laughter fills the air,
+Raise your glass and toast to good times,
+Unwind, savor, and let the night sparkle,
+Celebrate life’s finest moments with us.</p>
+        <div class="hero-buttons">
+          <a href="#products" class="btn btn-primary">Explore Our blends</a>
+          <a href="#" class="btn btn-secondary">Visit Our Bar</a>
+        </div>
+      </div>
+      <img src="1.jpg" alt="" width="370px">
+    </div>
+    </section>
+    
+    
+    <!-- Products section -->
+     <section class="products" id="products">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-subtitle">Our Selection</div>
+          <h2 class="section-title">Signature Bar Blends</h2>
+          <p class="section-desc">With a cozy ambiance, lively music, and delicious food, our bar is the perfect place to unwind with friends or enjoy a fun-filled night out.</p>
+        </div>
+
+        <div class="product-grid">
+          <div class="product-card">
+            <div class="product-img">
+              <img src="2.jpg" alt="ethiopian yirgacheffe">
+            </div>
+            <div class="product-info">
+              <div class="product-tag">Bestseller</div>
+              <h3 class="product-title">rdftvgybhjnkm</h3>
+              <p class="product-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus rem quos fugiat dolor at tempore maxime nemo aut sequi voluptas ducimus deserunt, quidem iure adipisci perspiciatis dolorum unde reiciendis beatae!</p>
+              <div class="product-footer">
+                <div class="product-price">£18.99</div>
+                <div class="rating">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img">
+              <img src="3.jpg" alt="bar bar">
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">hi babe</h3>
+              <p class="product-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi excepturi distinctio nemo totam sed asperiores ex amet non quaerat quae esse odit natus, minus itaque pariatur inventore maxime laudantium nesciunt.</p>
+              <div class="product-footer">
+                <div class="product-price">£16.99</div>
+                <div class="rating">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+          <div class="product-img">
+            <img src="4.jpg" alt="dark">
+          </div>
+          <div class="product-info">
+            <div class="product-tag">NEW</div>
+            <h3 class="product-title">this is beautidful</h3>
+            <p class="product-desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias recusandae dolor sed, eius optio quisquam deserunt laborum neque in maiores odio quasi. Cumque molestiae nihil debitis aperiam, eum consectetur quibusdam!</p>
+            <div class="product-footer">
+              <div class="product-price">£17.99</div>
+              <div class="rating">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Offers Section -->
+<section class="offers" id="offers">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-subtitle">Special Deals</div>
+      <h2 class="section-title">Exclusive Bar Offers</h2>
+      <p class="section-desc">
+        Treat yourself to the finest blends and enjoy unbeatable offers crafted for you.
+        Buy 6 bottles and the 7th one’s on the house!
+      </p>
+    </div>
+
+    <div class="offers-grid">
+      <div class="offer-card">
+        <h3>🍹 Happy Hour</h3>
+        <p>Buy 1 Get 1 on cocktails every evening <strong>5 PM - 8 PM</strong>.</p>
+      </div>
+
+      <div class="offer-card">
+        <h3>🍾 Wine Lovers</h3>
+        <p>Buy 6 bottles and get your <strong>7th bottle free!</strong></p>
+      </div>
+
+      <div class="offer-card">
+        <h3>🥂 Weekend Bliss</h3>
+        <p>Enjoy <strong>25% off</strong> on all premium spirits every Friday & Saturday night.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- footer -->
+   <footer>
+    <div class="container" id="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>About bar shop</h3>
+          <p style="color: var(--coffee-accent); margin-bottom: 20px;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae vel nam laboriosam earum ut hic consequatur dolores obcaecati? Totam animi maiores fugiat aliquid commodi esse ratione saepe illum dolores blanditiis.</p>
+          <div class="social-links">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h3>quick links</h3>
+          <ul class="footer-links">
+            <li><a href="#">items bar</a></li>
+            <li><a href="#">items bar</a></li>
+            <li><a href="#">items bar</a></li>
+            <li><a href="#">items bar</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>contact us</h3>
+          <ul class="footer-links">
+            <li><i class="fa-solid fa-location-dot"></i>bar shop uk</li>
+            <li><i class="fa-solid fa-phone"></i>(555)(1234-56789)</li>
+            <li><i class="fa-solid fa-envelope"></i>hello@gmail.com</li>
+            <li><i class="fa-solid fa-clock"></i>mon-sun: 7am - 2am</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="copy-right">
+        &copy; 2025 bindaas.All rights reserved
+      </div>
+    </div>
+   </footer>
+
+  <!-- link to javascript file -->
+  <script src="bar.js"></script>
+
+  <script>
+// Smooth scrolling for navbar links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+
+// Fade-in animation for Offers section
+window.addEventListener('scroll', function() {
+  const offers = document.querySelector('.offers');
+  const offersTop = offers.getBoundingClientRect().top;
+  const windowHeight = window.innerHeight;
+  
+  if (offersTop < windowHeight - 100) {
+    offers.classList.add('show');
+  }
+});
+</script>
+
+<script>
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll(".nav-link");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 100;
+    const sectionHeight = section.clientHeight;
+    if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href").includes(current)) {
+      link.classList.add("active");
+    }
+  });
+});
+</script>
+
+
+</body>
+
+<script>
+  // Check login status on page load
+  window.onload = function() {
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+    const signInBtn = document.getElementById('signInBtn');
+    const signOutBtn = document.getElementById('signOutBtn');
+
+    if (isLoggedIn === 'true') {
+      signInBtn.style.display = 'none';
+      signOutBtn.style.display = 'inline-block';
+    } else {
+      signInBtn.style.display = 'inline-block';
+      signOutBtn.style.display = 'none';
+    }
+
+    // Sign out functionality
+    signOutBtn.addEventListener('click', function() {
+      localStorage.removeItem('isLoggedIn');
+      alert('Signed out successfully!');
+      window.location.reload();
+    });
+  };
+</script>
+
+
+</html>
