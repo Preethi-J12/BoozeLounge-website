@@ -149,25 +149,55 @@
       Booze<span style="color:white;">Lounge</span>
     </div>
     <h2>Welcome Back!</h2>
-    <input type="text" id="email" placeholder="Enter email or phone">
-    <input type="password" id="password" placeholder="Enter password">
-    <button onclick="login()">Sign In</button>
+    <input
+        type="text"
+        id="email"
+        name="emailOrPhone"
+        placeholder="Enter email or phone"
+        pattern="^(?:[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}|(?:\+91[-\s]?|0)?[6-9]\d{9})$"
+        title="Enter a valid email (example@domain.com) or a 10-digit Indian phone (with optional +91 or 0)."
+        required
+    />
+
+    <!-- Password input -->
+    <input
+       type="password"
+       id="password"
+       placeholder="Enter password"
+       pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&^()[\]{}<>~_+=|;:.,-])[A-Za-z\d@$!%*#?&^()[\]{}<>~_+=|;:.,-]{8,}$"
+       title="Password must be at least 8 characters and include uppercase, lowercase, number and special character."
+       required
+    />
+
+    <!-- Sign in button -->
+  <button type="button" onclick="login()">Sign In</button>
     <a href="bar.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
   </div>
 
   <script>
     function login() {
-      const email = document.getElementById('email').value.trim();
-      const password = document.getElementById('password').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
 
-      if (email && password) {
-        localStorage.setItem('isLoggedIn', 'true');
-        alert('Login successful!');
-        window.location.href = 'bar.html';
-      } else {
-        alert('Please enter both email and password.');
-      }
+    // Regex for email or Indian phone
+    const emailOrPhoneRegex = /^(?:[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}|(?:\+91[-\s]?|0)?[6-9]\d{9})$/;
+    // Regex for password
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&^()[\]{}<>~_+=|;:.,-])[A-Za-z\d@$!%*#?&^()[\]{}<>~_+=|;:.,-]{8,}$/;
+
+    if (!emailOrPhoneRegex.test(email)) {
+      alert('Enter a valid email or Indian phone number.');
+      return;
     }
+
+    if (!passwordRegex.test(password)) {
+      alert('Password must be at least 8 characters long, with uppercase, lowercase, number, and special character.');
+      return;
+    }
+
+  // If valid
+  localStorage.setItem('isLoggedIn', 'true');
+  window.location.href = 'bar.html'; // redirect after login
+}
   </script>
 </body>
 </html>
